@@ -1,0 +1,156 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+<head>
+	<link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+	<#if .locale == "zh_CN">
+		<link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+	<#elseif .locale == "zh_TW">
+		<link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+	<#elseif .locale == "ja_JP">
+		<link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+	<#elseif .locale == "ko_KR">
+		<link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+	<#elseif .locale == "th_TH">
+		<link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+	</#if>
+    <macrolist>
+        <macro id="nlheader">
+            <table class="header" style="width: 100%; font-size: 10pt;"><tr>
+	<td colspan="3"><img src="https://7232941.app.netsuite.com/core/media/media.nl?id=3109&amp;c=7232941&amp;h=XTAmfozTSkrKW-u1E_rcxQ1e2chcgCXXHoFCLhXUqX9LJF9e&amp;fcts=20210527071010&amp;whence=" style="width: 275px; height: 112.5px;" /></td>
+	</tr>
+	<tr>
+	<td colspan="3" align="center" style="font-size: 24pt; padding: 20px 0px 0px 0px; font-weight: bold">SHIPPING PLACARD</td>
+	</tr></table>
+        </macro>
+    </macrolist>
+    <style type="text/css">table {
+        <#if .locale == "zh_CN">
+            font-family: stsong, sans-serif;
+        <#elseif .locale == "zh_TW">
+            font-family: msung, sans-serif;
+        <#elseif .locale == "ja_JP">
+            font-family: heiseimin, sans-serif;
+        <#elseif .locale == "ko_KR">
+            font-family: hygothic, sans-serif;
+        <#elseif .locale == "ru_RU">
+            font-family: verdana;
+        <#else>
+            font-family: sans-serif;
+        </#if>
+            font-size: 9pt;
+            table-layout: fixed;
+        }
+        th {
+            font-weight: bold;
+            font-size: 8pt;
+            vertical-align: middle;
+            padding: 5px 6px 3px;
+            background-color: #e3e3e3;
+            color: #333333;
+        }
+        td {
+            padding: 8px 10px;
+          	font-size: 21pt;
+        }
+        b {
+            font-weight: bold;
+            color: #333333;
+        }
+        table.header td {
+            padding: 0;
+            font-size: 10pt;
+        }
+      	table.inTable{
+           padding: 0;
+           font-size: 8pt;
+           padding-bottom: 0px;
+            padding-top: 0px;
+        }
+        table.footer td {
+            padding: 0;
+            font-size: 8pt;
+        }
+        table.itemtable th {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+        table.body td {
+            padding-top: 2px;
+        }
+        td.addressheader {
+            font-size: 24pt;
+            font-weight: bold;
+            padding-top: 10px;
+            padding-bottom: 8px;
+            background-color: #E0E0E0;
+        }
+        td.address {
+            padding-top: 10px;
+        }
+      	p.myp{
+           width: 100%;
+           font-size: 10pt;
+           font-weight: bold;
+           align: center;
+        }
+      	p.check{
+          font-size: 7pt;
+          align: left;
+          valign: middle;
+        }
+        span.title {
+            font-size: 28pt;
+        }
+        span.number {
+            font-size: 16pt;
+        }
+        span.itemname {
+            font-weight: bold;
+            line-height: 150%;
+        }
+        hr {
+            border-top: 1px dashed #d3d3d3;
+            width: 100%;
+            color: #ffffff;
+            background-color: #ffffff;
+            height: 1px;
+        }
+      table.mytable {
+          font-size: 9pt;
+          border-collapse: collapse;
+         }
+      .mytable td, .mytable th
+		{
+    	border: 0.1px solid #000000;
+		}
+      table.topdown{
+         font-size: 8pt;
+         border-collapse: collapse;
+      }
+      b{
+        font-size: 28px;
+      }
+</style>
+</head>
+<body header="nlheader" header-height="8%" padding="0.75in 0.5in 0.75in 0.5in" size="Letter-LANDSCAPE">
+    &nbsp;
+<table class="mytable" style="width: 100%; margin-top: 100px;"><tr>
+	<td colspan="1" style="width: 411px; height: 4px;">
+      <p><span style="font-size:28px; font-weight: bold"><b>Customer P.O. Number: </b>${record.createdfrom.otherrefnum}</span></p>
+	</td>
+	</tr>
+	<tr>
+	<td style="vertical-align: top; width: 377px; font-weight: bold"><span style="font-size:28px;"><b>Sales Order Number: </b>${record.createdfrom.tranid}</span></td>
+	</tr>
+    <tr>
+	<td style="vertical-align: top; align: left; width: 377px; font-weight: bold"><span style="font-size:28px;"><b>Vendor Name: </b>${record.entityname}</span></td>
+	</tr>
+	<tr>
+	<td class="addressheader" style="width: 377px; font-weight: bold">VENDOR ADDRESS</td>
+	</tr>
+	<tr>
+	<td class="address" style="width: 377px; font-weight: bold"><b>${record.shipaddress}</b></td>
+	</tr></table>
+<#if record.item?has_content></#if>
+</body>
+</pdf>_
