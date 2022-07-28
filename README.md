@@ -10,6 +10,7 @@ This custom print button uses NetSuite's Advanced PDF/HTML Template feature to g
   - Modules: N/url, N/currentRecord, N/record, N/render
   - SuiteScript Types: Client Script, User Event Script, Suitelet
   - API Version: 2.x
+  - JSDoc Tags
 - Advanced PDF/HTML Templates
   - Languages: HTML, FreeMarker, XML, CSS
 ## Project Setup
