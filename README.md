@@ -1,7 +1,7 @@
 # Netsuite-Custom-Print-Button
 ## Project Overview
 ### Purpose
-This custom print button uses NetSuite's Advanced PDF/HTML Template feature to generate a shipping placard PDF based on data fields. The placard is used to keep track of the recipient of pallets.
+This custom print button uses NetSuite's Advanced PDF/HTML Template feature to generate a shipping placard PDF based on data fields. The placard is used to keep track of the recipients of pallets and establishes a reliable organization strategy for production.
 ### Features
 - Custom Print Button
 - PDF Template
@@ -17,16 +17,16 @@ This custom print button uses NetSuite's Advanced PDF/HTML Template feature to g
 ### Uploading to NetSuite
 - **Adding a SuiteScript to the File Cabinet:** navigate Customization>Scripting>Scripts>New; next to the "Script File" dropdown, press the plus sign to upload a new SuiteScript file; select the NetSuite folder that you want to store the SuiteScript files in; under "Select File," press the "Choose File" button; select the SuiteScript file that you want to upload and press open; save and press the blue "Create Script Record" button; name the file, input a relevant ID, and save
 ## File Descriptions
-### placard_button_es
+### placard_button_es.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** User Event Script, beforeLoad
-- **Description:** creates the custom print button for all Item Fulfillment records
+- **Description:** creates the custom print placard button for all Item Fulfillment records
 - **Catering the Code to Your NetSuite:**
     - Applying to Different Record Type: change the JSDoc tag from "itemfulfillment" to the relevant record type
     - Changing the Button Label: find the function "context.form.addButton" and change the parameter "label" to the new label, keeping the new name in quotation marks
     - Calling a Different Client Script: find the function "context.form.clientScriptModulePath" and specify the path where your client script file is stored
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Execute As Role," choose "Administrator" so that the code will get full access to NetSuite and will not create any permissions errors; under "Applies To," select the record type that you want the button to appear on (I used Item Fulfillment); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
-### placard_button_click_cs
+### placard_button_click_cs.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Client Script, pageInit and onButtonClick
 - **Description:** calls the suitelet to render and generate the PDF when the button is pressed
@@ -34,7 +34,7 @@ This custom print button uses NetSuite's Advanced PDF/HTML Template feature to g
     - Applying to Different Record Type: change the JSDoc tag from "itemfulfillment" to the relevant record type
     - Calling a Different Suitelet: find the line "var suiteletURL = url.resolveScript" and change the scriptId and deploymentId to the information associated with the desired suitelet
 - **Deploying SuiteScript:** go to the SuiteScript file; press the "Deploy Script" button; enter a name and relevant ID; change the status to "Testing"; under "Applies To," select the record type that you want the button to appear on (I used Item Fulfillment); once the code has been tested, change the status to "Released" and select who can use the button under the "Audience" subtab (selecting "All Roles" will make all users able to use it)
-### placard_button_suitelet
+### placard_button_suitelet.js
 - **Programming Languages:** JavaScript, SuiteScript 2.0
 - **SuiteScript Type:** Suitelet, onRequest
 - **Description:** generates and renders PDF using current record data fields
