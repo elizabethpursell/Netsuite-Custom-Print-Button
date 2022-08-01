@@ -1,6 +1,6 @@
 # Netsuite-Custom-Print-Button
 ## Project Overview
-![placardbutton](https://user-images.githubusercontent.com/94419306/182225221-6a3560c6-19e3-4e24-8031-d0311da8de8a.png)
+![placardbutton](https://user-images.githubusercontent.com/94419306/182233399-736be40a-a492-4f3d-a362-c8a954c60371.png)
 
 ### Purpose
 This custom print button uses NetSuite's Advanced PDF/HTML Template feature to generate a shipping placard PDF based on data fields. The placard is used to keep track of the recipients of pallets and establishes a reliable organization strategy for production.
